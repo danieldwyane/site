@@ -79,7 +79,7 @@
 
 <script>
     // URL del API REST
-    const apiUrl = 'http://localhost:8080/sandbox/regalos/findAvailable';
+    const apiUrl = 'https://microservice-production-e133.up.railway.app/findAvailable';
 
     // Obtener el select desplegable
     const selectRegalos = document.getElementById('regalos');
@@ -109,7 +109,7 @@
             name: nombre,
         };
         
-        fetch('http://localhost:8080/sandbox/regalos', {
+        fetch('https://microservice-production-e133.up.railway.app/regalos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
