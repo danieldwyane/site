@@ -67,7 +67,7 @@
 <div id="formularioRegalodiv">
     <h1>Lista de Regalos para la Fiesta</h1>
     <form id="formularioRegalo">
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Nombre Invitado:</label>
         <input type="text" id="nombre" name="nombre" required>
         
         <label for="regalos">Selecciona máximo 3 regalos:</label>
@@ -124,7 +124,7 @@
         .then(response => response.text())
         .then(data => {
             console.log(data); // Muestra la respuesta del servidor
-            alert('Regalo guardado correctamente');
+            alert('Regalos guardados correctamente');
             location.reload();
         })
         .catch(error => {
@@ -135,7 +135,12 @@
 
     $(document).ready(function() {
         $('#regalosmulti').select2({
-            maximumSelectionLength: 3 // Limita a un máximo de 3 selecciones
+            maximumSelectionLength: 3, // Limita a un máximo de 3 selecciones
+            language: {
+            maximumSelected: function (e) {
+                return "Solo puedes seleccionar hasta " + e.maximum + " regalos";
+            }
+        }
         });
     });
 </script>
